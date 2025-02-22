@@ -67,5 +67,6 @@ class Kernel extends HttpKernel
         'connexion' => \App\Http\Middleware\Login::class,
         'live' => \App\Http\Middleware\CheckUserActive::class,
         'check.user.status' => \App\Http\Middleware\CheckUserStatus::class,
+        'check.auth' => \App\Http\Middleware\CheckAuth::class,
     ];
 }

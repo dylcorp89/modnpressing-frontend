@@ -28,7 +28,7 @@ Route::get('/', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login_verif');
 
 // Routes protégées par le middleware 'check.user.status'
-//Route::group(['middleware' => ['check.user.status']], function () {
+Route::group(['middleware' => ['check.auth']], function () {
 
     // Routes principales
     Route::get('/home', [AccueilController::class, 'index'])->name('home');
@@ -100,5 +100,5 @@ Route::post('/login', [LoginController::class, 'authenticate'])->name('login_ver
         Route::delete('{id}/delete/', [ApiController::class, 'delete'])->name('delete');
     });
 
-//});
+});
 

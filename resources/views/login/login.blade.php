@@ -22,11 +22,13 @@
                 <div class="w-full max-w-sm">
                     <h1 class="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-6">Connexion</h1>
 
-                    @if (session('error'))
-                        <div class="mb-4 p-4 bg-red-100 text-red-800 border border-red-400 rounded">
-                            {{ session('error') }}
+
+                    @error('email')
+                    <div class="mb-4 p-4 bg-red-100 text-red-800 border border-red-400 rounded">
+                            {{ $message }}
                         </div>
-                    @endif
+                     @enderror
+
 
                     <form action="{{ route('login_verif') }}" method="POST">
                         @csrf
@@ -36,7 +38,7 @@
                             <input name="email" type="email" required
                                 class="block w-full mt-1 px-4 py-2 text-sm dark:border-gray-600 dark:bg-gray-700
                                     focus:border-purple-400 focus:ring focus:ring-purple-300 focus:ring-opacity-50
-                                    dark:text-gray-300 rounded-lg shadow-sm" 
+                                    dark:text-gray-300 rounded-lg shadow-sm"
                                 placeholder="JaneDoe@modn.ci" />
                         </label>
 
@@ -45,7 +47,7 @@
                             <input name="password" type="password" required
                                 class="block w-full mt-1 px-4 py-2 text-sm dark:border-gray-600 dark:bg-gray-700
                                     focus:border-purple-400 focus:ring focus:ring-purple-300 focus:ring-opacity-50
-                                    dark:text-gray-300 rounded-lg shadow-sm" 
+                                    dark:text-gray-300 rounded-lg shadow-sm"
                                 placeholder="***************" />
                         </label>
 
