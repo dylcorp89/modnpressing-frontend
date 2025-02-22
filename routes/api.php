@@ -17,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::middleware(['firebase'])->group(function () {
+    Route::get('/user-info', function (Request $request) {
+        return response()->json([
+            'firebase_uid' => $request->attributes->get('firebase_uid'),
+        ]);
+    });
+});

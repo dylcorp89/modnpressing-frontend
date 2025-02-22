@@ -8,7 +8,6 @@ use InvalidArgumentException;
 use Kreait\Firebase\Database;
 
 use Illuminate\Support\Facades\Log;
-use Kreait\Firebase\Messaging\CloudMessage;
 
 class FirestoreService
 {

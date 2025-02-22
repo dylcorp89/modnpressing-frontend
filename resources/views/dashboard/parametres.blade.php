@@ -17,7 +17,7 @@
     Gestion des API
 </h2>
 
-<div class="container mx-auto px-4 bg-white p-4 my-2 min-w-0 rounded-lg shadow-xs dark:bg-gray-800">
+<div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
     <div class="card-body">
         <!-- Notification de succès -->
         @if (session('success'))
@@ -46,13 +46,13 @@
 
 
             <!-- Champ Google API -->
-            <label class="block mt-4 text-sm">
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-400">
                 <span class="text-gray-700 dark:text-gray-400">Google Api key</span>
                 <div class="relative text-gray-500 focus-within:text-purple-600 dark:focus-within:text-purple-400">
                     <input
                         name="google_api"
                         value="{{ $api['google_api'] ?? '' }}"
-                        class="block w-full pr-10 mt-1 text-sm text-black dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray form-input"
+                        class="mt-1 block w-full text-sm text-black dark:text-gray-300 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 rounded-lg p-2 focus:ring focus:ring-blue-300"
                         placeholder="Votre Google API Key"
                     />
                 </div>
@@ -65,7 +65,7 @@
                     <input
                         name="admod_api"
                         value="{{ $api['admod_api'] ?? '' }}"
-                        class="block w-full pr-10 mt-1 text-sm text-black dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray form-input"
+                        class="mt-1 block w-full text-sm text-black dark:text-gray-300 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 rounded-lg p-2 focus:ring focus:ring-blue-300"
                         placeholder="Votre Admob API Key"
                     />
                 </div>
@@ -74,7 +74,7 @@
             <!-- Bouton d'enregistrement -->
             <button
                 type="submit"
-                class="my-6 px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+                class="px-6 py-2 my-4 text-white font-medium bg-blue-600 hover:bg-blue-700 rounded-lg transition duration-150"
             >
                 Enregistrer
             </button>

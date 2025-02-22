@@ -44,6 +44,9 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
     ];
+    protected $routeMiddleware = [
+        'firebase' => \App\Http\Middleware\VerifyFirebaseToken::class,
+    ];
 
     /**
      * The application's middleware aliases.
@@ -68,5 +71,6 @@ class Kernel extends HttpKernel
         'live' => \App\Http\Middleware\CheckUserActive::class,
         'check.user.status' => \App\Http\Middleware\CheckUserStatus::class,
         'check.auth' => \App\Http\Middleware\CheckAuth::class,
+        'firebase' => \App\Http\Middleware\VerifyFirebaseToken::class,
     ];
 }
